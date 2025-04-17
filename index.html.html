@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Terror</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nosifer&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Mundo do Terror!</h1>
+        <p class="principal-text">Explore e conheça jogos, filmes e livros de terror.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="jogos.html" data-page="jogos">Jogos</a></li>
+            <li><a href="filmes.html" data-page="filmes">Filmes</a></li>
+            <li><a href="livros.html" data-page="livros">Livros</a></li>
+            <li><a href="sugestoes.html" class="botao-nav-terror">Ver sugestões</a></li>
+
+        </ul>
+    </nav>
+
+    <div id="content">
+        <section id="intro">
+            <h2 class="principal-title">Conheça sobre o mundo do Terror!</h2>
+            <div class="category">
+                <a href="jogos.html">
+                    <img src="imagens/jogos/resident4.jpg" alt="Resident Evil 4 Remake" class="resident4-img">
+                    <h2 class="jogos-text">Jogos de Terror</h2>
+                </a>
+            </div>
+
+            <div class="category">
+                <a href="filmes.html">
+                    <img src="imagens/filmes/panico.jpg" alt="Pânico" class="panic-img">
+                    <h2 class="filmes-text">Filmes de Terror</h2>
+                </a>
+            </div>
+            
+            <div class="category">
+                <a href="livros.html">
+                    <img src="imagens/livros/it.jpg" alt="It, A Coisa" class="itcoisa-img">
+                    <h2 class="livros-text">Livros de Terror</h2>
+                </a>
+            </div>
+            <div class="form-container sugestao-box">
+                <h2>Envie sua sugestão de terror</h2>
+                <form id="sugestaoForm">
+                    <input type="email" id="emailSugestao" placeholder="Seu e-mail" required><br>
+            
+                    <select id="categoriaSugestao" required>
+                        <option value="" disabled selected>Selecione a categoria</option>
+                        <option value="Filmes">Filmes</option>
+                        <option value="Livros">Livros</option>
+                        <option value="Jogos">Jogos</option>
+                    </select><br>
+            
+                    <textarea id="mensagemSugestao" placeholder="Digite sua sugestão..." rows="5" required></textarea><br>
+            
+                    <button type="submit" class="botao-terror">Enviar Sugestão</button>
+                </form>
+            </div>
+            
+            <script>
+                document.getElementById("sugestaoForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+            
+                    const email = document.getElementById("emailSugestao").value;
+                    const categoria = document.getElementById("categoriaSugestao").value;
+                    const mensagem = document.getElementById("mensagemSugestao").value;
+            
+                    if (!email) {
+                        alert("O e-mail é obrigatório.");
+                        return;
+                    }
+            
+                    const sugestoes = JSON.parse(localStorage.getItemData("sugestoes")) || [];
+                    sugestoes.push({ email, categoria, mensagem });
+                    localStorage.setItemData("sugestoes", JSON.stringify(sugestoes));
+            
+                    alert("Sugestão enviada com sucesso! Obrigado por participar do lado sombrio...");
+            
+                    document.getElementById("sugestaoForm").reset();
+                });
+            </script>
+            
+            
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Terror World. Todos os direitos reservados.
+    </footer>
+</body>
+</html>

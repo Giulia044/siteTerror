@@ -1,0 +1,715 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Creepster', cursive;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    line-height: 1.6;
+    padding: 20px;
+}
+  
+  /* Estilos para tablets (largura mínima de 768px) */
+  @media (max-width: 768px) {
+    .movie-item,
+    .book-item,
+    .game-review {
+      display: none;
+      width: 100%;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+  
+    .item-visible {
+      display: block;
+    }
+  
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 15px;
+    }
+  
+    .nav-buttons button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      background-color: #8B0000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      font-family: 'Creepster', cursive;
+    }
+  
+    .nav-buttons button:hover {
+      transform: scale(1.1);
+      background-color: #ff0000;
+    }
+  }
+  
+ 
+  /* Estilos para desktops (largura mínima de 992px) */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+  }
+
+  .box {
+    width: 50%;
+    padding: 2em;
+    font-size: 1.2rem;
+  }
+  
+
+header {
+    text-align: center;
+    margin-top: 50px;
+    cursor: default;
+}
+
+h1 {
+    font-size: 8rem;
+    color: #8B0000;
+    animation: fadeIn 2s ease-out forwards; 
+    letter-spacing: 2px;
+    font-family: 'Creepster', cursive;
+    text-shadow:4px 4px 5px rgb(0, 0, 0);
+}
+
+nav {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Creepster', cursive;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    background-color: #222;
+    padding: 10px 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
+    letter-spacing: 2px;
+     color: #8B0000; 
+     text-shadow: 2px 2px 5px black;
+        
+}
+
+nav ul li a:hover {
+    background-color: #8B0000;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+main {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+
+.category-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+
+.category-img:hover {
+    transform: scale(1.05);
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.category {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category h2 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #ff6666;
+}
+
+.principal-text {
+    font-family: "shadows into light", cursive;
+    font-size: 3rem;
+    color: #8B0000;
+    cursor: default;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-out forwards;
+}
+
+
+h2.principal-title {
+    font-family: 'creepster', cursive;
+    font-size: 4rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 5%;
+    cursor: default;
+    text-shadow: 5px 5px 5px #330000;
+    animation: fadeIn 2s ease-out forwards;
+    letter-spacing: 2px;
+}
+
+h2.jogos-text { /* imagem principal Jogos */
+    font-family: "Shadows Into Light", cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 50px;
+    color: #f5f5f5; 
+    text-shadow: 2px 2px 5px #330000;
+    animation: fadeIn 2s ease-out forwards;
+    
+}
+h2.filmes-text { /* imagem principal Filmes */
+    font-family: "Shadows Into Light", cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 3%;
+    color: #f5f5f5; 
+    text-shadow: 2px 2px 5px #330000;
+    animation: fadeIn 2s ease-out forwards;
+    letter-spacing: 2px;
+}
+h2.livros-text { /* imagem principal Livros */
+    font-family: "Shadows Into Light", cursive;
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    color: #f5f5f5; 
+    text-shadow: 2px 2px 5px #330000;
+    animation: fadeIn 2s ease-out forwards;
+    letter-spacing: 2px;
+}
+h3 {
+    cursor: default;
+}
+
+.resident4-img {
+    width: 30%; 
+    height: auto;
+    margin-top: 4%;
+    max-width: 30%; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.panic-img  {
+    width: 30%; 
+    height: auto;
+    margin-top: 5%;
+    max-width: 3000px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.itcoisa-img {
+    width: 30%; 
+    height: auto;
+    margin-top: 50px;
+    max-width: 3000px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-out forwards;
+}
+    
+
+p {
+    font-family: 'Arial', sans-serif;  
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    text-align: justify;
+    margin-top: 20px;
+}
+
+
+.jogos-intro {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 3rem;
+    color: #8B0000; 
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.game-review {
+    margin-bottom: 30px;
+    padding: 20px;
+    padding-bottom: 30px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: calc(50% - 18px); /* accounting for gap */
+}
+
+.game-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.game-review h2 {
+    font-size: 4rem; 
+    color: #ff3333; 
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5); 
+    text-align: center; 
+    cursor: default;
+    letter-spacing: 2px; 
+    font-family: 'Creepster', cursive; 
+    margin-top:10px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.resident-img {
+    width: 100%; 
+    height: auto;
+    max-width: 300px; 
+}
+.silent-img {
+    width: 100%; 
+    height: auto;
+    max-width: 100px; 
+}
+.amnesia-img {
+    width: 100%; 
+    height: auto;
+    max-width: 300px; 
+}
+
+.until-img {
+    width: 100%; 
+    height: auto;
+    max-width: 300px; 
+}
+.outlast-img {
+    width: 100%; 
+    height: auto;
+    max-width: 300px; 
+}
+
+.dbd-img {
+    width: 100%; 
+    height: auto;
+    max-width: 300px; 
+}
+
+.filmes-intro {
+    font-family: "Shadows Into Light", cursive;
+    font-size: 2rem;
+    color: #8B0000; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.game-info img {
+    max-width:70%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.game-info p {
+    font-size: 1rem;
+    color: #f5f5f5;
+    margin-bottom: 15px;
+}
+
+.game-info a {
+    font-size: 1.2rem;
+    color: #ff4500;
+    text-decoration: none;
+    border: 2px solid #ff4500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.game-info a:hover {
+    background-color: #ff4500;
+    color: #fff;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+        color: #ff3333; 
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.7); 
+        color: #ff6666; 
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+        color: #ff3333; 
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.jogos {
+    font-family: 'Creepster', cursive;
+    font-size: 6rem;
+    color: #ffffff;
+    cursor: default;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 5px 5px 5px #8B0000;
+}
+
+.filmes-intro {
+    opacity: 0; 
+    animation: fadeIn 2s ease-out forwards; 
+    font-size: 60px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+h2.Filmes {
+    font-family: 'Creepster', cursive;
+    font-size: 6rem;
+    color: #ffffff;
+    cursor: default;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 5px 5px 5px #8B0000;
+
+
+}
+
+p.sinopse{
+    font-family: 'ZillaSlab', serif;
+    font-size: 1.5rem;
+    color: #f5f5f5;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+    line-height: 1.6;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    width: 90%; 
+    margin: 20px auto; 
+    text-align: justify;
+    
+}
+.movie-category {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.movie-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    padding-bottom: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #8B0000;
+    overflow: hidden;
+    width: 30%;
+    color: #f5f5f5;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+.movie-item .card {
+    font-family: 'Creepster', cursive;
+    font-size: 12px;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+
+.invoc-img, .exorcista-img, .freira-img, .it-img, .panico-img, .halloween-img, .umlugar-img, .jogosmortais-img, .pesadelo-img {
+    width: 60%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h3.jogosmortais-title, h3.exor-title, h3.umlugar-title, h3.invoc-title, h3.freira-title, h3.halloween-title, h3.it-title, h3.panico-title, h3.pesadelo-title {
+    font-family: 'Creepster', cursive;
+    font-size: 4rem;
+    color: #ffffff; 
+    text-align: center;
+    margin-top: 0px;
+    text-shadow: 0px 4px 10px #8B0000;
+}
+
+
+.btn-filme {
+    background-color: #8B0000; 
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Creepster', cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.btn-filme:hover {
+    background-color: #ff4500; 
+    transform: scale(1.1);
+}
+
+
+a {
+    text-decoration: none; 
+}
+
+.livros-intro {
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Creepster', cursive;
+    text-shadow: 3px 4px 4px #8B0000;
+}
+.livros-text {
+    font-family: "shadows into light", cursive;
+    font-size: 3rem;
+    color: #8B0000;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 2s ease-out forwards;
+}
+
+.book-category {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.book-item {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    padding-bottom: 20px;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #8B0000;
+    animation: fadeIn 5s ease-out forwards; 
+}
+
+.book-item h3 {
+    color: #fff;
+    font-size: 190%;
+    background-color: #8B0000;
+    padding: 20px;
+    margin: 0;
+    letter-spacing: 2px;
+    font-family: 'Creepster', cursive;
+    text-shadow: 5px 5px 5px #1a1a1a;
+}
+
+.book-item p {
+    color: #ddd;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.btn-ilumi, .btn-dracula, .btn-cemiterio, .btn-desenhos, .btn-ocolecionador, .btn-saboroso {
+    background-color: #8B0000; 
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: 'Creepster', cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: fadeIn 2s ease-out forwards; 
+}
+
+
+.btn-ilumi:hover, .btn-dracula:hover, .btn-cemiterio:hover, .btn-desenhos:hover, .btn-ocolecionador:hover, .btn-saboroso:hover {
+    color: #8B0000; 
+    background-color: black;
+    transform: scale(1.1);
+}
+
+.sugestao-box {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px red;
+    max-width: 400px;
+    margin: 30px auto;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif ;
+}
+
+.sugestao-box h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    color: #fff;
+    font-family: 'Creepster', cursive; 
+    text-shadow: 2px 2px 5px #000;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    letter-spacing: 2px;
+    cursor: default;
+    text-decoration: underline;
+    text-decoration-color: #8B0000;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #8B0000, 0 0 10px #8B0000, 0 0 15px #8B0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+    }
+    100% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #8B0000, 0 0 30px #8B0000;
+    }
+}
+
+.sugestao-box input,
+.sugestao-box select,
+.sugestao-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #222;
+    border: 1px solid #444;
+    color: #eee;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.sugestao-box input:focus,
+.sugestao-box select:focus,
+.sugestao-box textarea:focus {
+    border-color: #8B0000;
+    box-shadow: 0 0 5px #8B0000, 0 0 10px #8B0000;
+    outline: none;
+}
+
+.botao-terror {
+    background-color: #8b0000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.botao-terror:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 10px red;
+}
+.botao-nav-terror {
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: color 0.3s, text-shadow 0.3s;
+    letter-spacing: 2px;
+     color: #8B0000; 
+     text-shadow: 2px 2px 5px black;
+}
+
+.botao-nav-terror:active {
+    transform: scale(0.95);
+}
+.botao-nav-terror:focus {
+    outline: none;
+}

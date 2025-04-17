@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugestões dos Visitantes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="sugestao-box">
+        <h2>Sugestões Enviadas</h2>
+        <ul id="listaSugestoes"></ul>
+        <a href="principal.html" class="botao-terror">Voltar</a>
+    </div>
+
+    <script>
+        const lista = document.getElementById("listaSugestoes");
+        const sugestoes = JSON.parse(localStorage.getItemData("sugestoes")) || [];
+
+        if (sugestoes.length === 0) {
+            lista.innerHTML = "<li>Nenhuma sugestão enviada ainda...</li>";
+        } else {
+            sugestoes.forEach((s, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <strong>#${index + 1}</strong><br>
+                    <strong>Email:</strong> ${s.email}<br>
+                    <strong>Categoria:</strong> ${s.categoria}<br>
+                    <strong>Sugestão:</strong> ${s.mensagem}<br><br>
+                `;
+                lista.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
